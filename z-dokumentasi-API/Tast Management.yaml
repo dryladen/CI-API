@@ -1,0 +1,227 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Tast Management
+  contact: {}
+host: localhost
+basePath: /ci-api/index.php
+securityDefinitions: {}
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /categories:
+    get:
+      summary: categories_getData
+      tags:
+      - Categories
+      operationId: categories_getData
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+    post:
+      summary: categories_createData
+      tags:
+      - Categories
+      operationId: categories_createData
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: name
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+    put:
+      summary: categories_updateData
+      tags:
+      - Categories
+      operationId: categories_updateData
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: id
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: name
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+    delete:
+      summary: categories_deleteData
+      tags:
+      - Categories
+      operationId: categories_deleteData
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: id
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /tasks:
+    get:
+      summary: tasks_getData
+      tags:
+      - Tasks
+      operationId: tasks_getData
+      deprecated: false
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+    post:
+      summary: tasks_createData
+      tags:
+      - Tasks
+      operationId: tasks_createData
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: category_id
+        in: formData
+        required: true
+        type: integer
+        format: int32
+        description: ''
+      - name: title
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: description
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: start_date
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: finish_date
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: status
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+    delete:
+      summary: tasks_deleteData
+      tags:
+      - Tasks
+      operationId: tasks_deleteData
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: id
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+    put:
+      summary: tasks_updateData
+      tags:
+      - Tasks
+      operationId: tasks_updateData
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: id
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: category_id
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: title
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: description
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: start_date
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: finish_date
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: status
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+tags:
+- name: Categories
+- name: Tasks
